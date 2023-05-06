@@ -1,4 +1,5 @@
 # ovo je komentar
+# Veoma je bitno napraviti .gitignore file pre iniciranja Git-a jer ukoliko Git već započene praćenje odredjenog fajla on neće prestati da ga prati čak i ako taj neželjeni fajl naknadno ubacimo u .gitignore.  
 
 # ignoriši sve datoteke u log folderu:
 log/

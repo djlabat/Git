@@ -6,6 +6,7 @@
 [COMMIT](#commit)  
 [LOG](#log)  
 [RESTORE COMMIT](#restore-commit)  
+[ORIGIN / MASTER](#origin-master)  
 [REMOTE REPOSITORIES](#remote-repositories)  
 [STASH](#stash)  
 [GRANE](#grane)  
@@ -13,6 +14,9 @@
 [manje bitne stvari](#manje-bitne-stvari)  
 [Novi repozitorijum, github uptstva](#novi-repozitorijum-github-uptstva)  
 [GIT PAGES](#git-pages)  
+[Errors](#errors)
+
+> Lep tutor na srpskom: https://www.webprogramiranje.org/git-komande/  
 
 ## VS Code shortcut
 csP (command Palete)> git clone 
@@ -58,9 +62,26 @@ csP (command Palete)> git clone
 `git RESET --hard`          // bez koda, resetuje trenutni git  
 `git CHECKOUT 146fa46a`  // Prebacivanje u neki drugi (prethodni) komit, pri cemu se cuva sadasnji  
 
-## REMOTE REPOSITORIES
-`git REMOTE add origin http://nasserver.git` // Registrovanje udaljenog servera pod imenom "origin", koji se nalazi na doticnoj adresi.  
-`git PUSH origin master` // push to Remote Repository (GitHub), "origin" je lokalno ime repozitorijuma, "master" je grana koju saljem.  
+## ORIGIN - MASTER  
+`origin` - je alias za punu URL adresu online repozitorijuma (npr. https://url_link_udaljenog_repozitorijuma). Ovakvo skraćeno predstavljanje URL-a nam omogućava jednostavniji rad sa naredbama jer izbegavate da koriste ogroman URL svaki put kada vam je u naredbi potreban. Koji tačno link predstavlja ovaj alias može se proveriti sa naredbom: `git remote -v`  
+
+`master` - grana (branch).
+Kada se u nekim naredbama pominje neka GRANA (npr. master) na UDALJENOM REPOZITORIJUMU potrebno je pored imena grane dodati i link do udaljenog repozitorijuma npr:  
+
+```js
+git push    https://url_link_udaljenog_repozitorijuma    master
+```
+
+Znajući da je "origin" alias za ovaj link, sada se "master" grana na udaljenom repu može označiti jednostavnije sa “origin master”. Pa bi komanda iz prethodnog primera izgledala ovako:  
+
+```js
+git push  origin  master
+```
+   
+## REMOTE REPOSITORIES  
+git remote -v
+`git REMOTE add origin http://nasserver.git` // URL Adresa `http://nasserver.git` udaljenog servera je stavljena u konstantu "origin".  
+`git PUSH origin master` // push-uj na udaljeni server (Remote Repository) `http://nasserver.git`, granu "master".  
 `git REMOTE remove` // uklanjanje repozitorijuma  
 `git PULL`    // skida sadrzaj sa udaljenog repozitorijuma i/ili odmah azurira lokalni repozitorijum sa verzijom koja je na udaljenom repozitorijumu.  
 `git CLONE https://github.com/mdbootstrap/knowledge-base.git` // skidanje nekog (tudjeg) Git projekta na svoj komp. Adresu skinuti sa gitHub sajta.  
@@ -161,3 +182,13 @@ main ═══╧══════════╩──────
 
 #### Tip & Tricks
    - editovanje sajta i na GitHub (commit + 10 sec + F5)
+
+### ERRORS
+   - Otvorim folder u VSCode i pop-up mi prozorcic (dole-desno) da ovaj folder nije bezbedan jer neki drugi user je vlasnik, nesto u tom smislu kenja. Samo klikni na dugme [Manage unsafe], pa gore u vrhu ekrana izaberi current folder.
+   - Kada pravim projekat od kojeg cu posle napraviti sajt na GitHub, bitno je fajl nazvati `index.html` (mala slova) inace ce biti problema.
+
+<style>
+   h1, h2, h3, h4, h5, h6 {
+      color: yellow
+   }
+</style>
